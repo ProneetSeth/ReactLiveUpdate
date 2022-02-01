@@ -14,7 +14,7 @@ const ListItem = ({ data }) => {
 
     return (
         <div className={"item-card"}>
-            <img className={"img-fluid"} src={`/assets/${data.thumbnail}`} alt={data.title}/>
+            <img className={"img-fluid"} src={`/assets/${data.thumbnail}`} alt={data.thumbnail}/>
             <div className={"item-card__information"}>
                 <div className={"pricing"}>
                     <span>₹{data.discountedPrice}</span>

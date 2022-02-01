@@ -11,18 +11,20 @@ import { useState } from "react"
 
 const Product = () => {
 
-    const [item,setItem] = useState({
-            id: 0,
-            title: "Title of this Item 1",
-            price: 450,
-            discountedPrice: 340,
-            thumbnail: "donut.png"
-    })
+    
 
     const [title,setTitle] = useState("")
     const [price,setPrice] = useState("0")
     const [discountedPrice,setDiscountedPrice] = useState("0")
-    const [thumbnail,setThumbnail] = useState("donut.png")
+    const [thumbnail,setThumbnail] = useState("")
+
+    const [item, setItem] = useState({
+        id: 0,
+        title: "Title of this Item 1",
+        price: 450,
+        discountedPrice: 340,
+        thumbnail: "donut.png"
+    })
 
     const handleTitle = (event) =>{
        //console.log(event.target.value);
@@ -47,6 +49,7 @@ const Product = () => {
         })
     }
     const handleThumbnail = e =>{
+        console.log(e.target.value);
         setThumbnail(e.target.value)
         setItem({
             ...item,
@@ -114,11 +117,12 @@ const Product = () => {
                     <div className={"input-field"}>
                         <label htmlFor="thumbnail">Thumbnail</label>
                         <input 
-                        type="text" 
-                        placeholder="example.png"
-                        value={thumbnail}
-                        onChange={handleThumbnail}
-                        required />
+                            type="text" 
+                            placeholder="Enter Thumbnail name" 
+                            value={thumbnail} 
+                            onChange={handleThumbnail}
+                            required
+                        />
                     </div>
 
                     <div className={"submit-wrap"}>
